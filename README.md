@@ -1,8 +1,23 @@
 ```
+enable
+configure terminal
 Router(config)#interface Gig0/1
 Router(config-if)#ip address 192.168.11.1 255.255.255.0
-Router(config-if)#ip  helper-address 192.168.10.2
 Router(config-if)#no shutdown
+```
+```
+// configure static route(router to router , static hop)
+ip route <destination-network> <subnet-mask> <next-hop-ip>
+```
+
+
+```
+// 2 switch one router
+Router(config)#interface Gig0/1
+Router(config-if)#ip address 192.168.11.1 255.255.255.0
+Router(config-if)#ip  helper-address 192.168.10.2 (dhcp server ip)
+Router(config-if)#no shutdown
+
 ```
 ```
 enable
@@ -37,3 +52,7 @@ ip dhcp pool LAN2
  dns-server 8.8.8.8
 exit
 ```
+
+```
+// NAT  PAT
+
